@@ -2,7 +2,6 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: mongo-jiva-client
-  namespace: mongo-jiva  
 spec:
   replicas: 1
   template:

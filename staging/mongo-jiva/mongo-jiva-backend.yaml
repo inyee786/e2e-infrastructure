@@ -2,7 +2,6 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: mongo-jiva-backend
-  namespace: mongo-jiva
 spec:
   selector:
     matchLabels:
@@ -17,7 +16,7 @@ spec:
         ports:
         - containerPort: 3000
         args:
-        - "mongodb://mongodb://mongo-0.mongo-jiva"
+        - "mongodb://mongo-0.mongo-jiva"
         image: openebs/mongo-jiva-backend:1776f0b
         imagePullPolicy: Always
 ---
