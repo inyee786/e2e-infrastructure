@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mongo-jiva-client
+  namespace: mongo-jiva  
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app : mongo-jiva-client
+    spec:
+      containers:
+        - name: mongo-jiva-client-container
+          image: openebs/www-mongo-jiva-client:ghgh89
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
