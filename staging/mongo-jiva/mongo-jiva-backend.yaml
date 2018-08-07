@@ -16,8 +16,8 @@ spec:
         ports:
         - containerPort: 3000
         args:
-        - "mongodb://mongo-0.mongo-jiva"
-        image: openebs/mongo-jiva-backend:1776f0b
+        - "mongodb://mongo-0.default"
+        image: mayadata/www-mongo-jiva-test-backend:master-71d6b75
         imagePullPolicy: Always
 ---
 apiVersion: v1

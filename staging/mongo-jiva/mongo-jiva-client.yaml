@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: mongo-jiva-client-container
-          image: openebs/www-mongo-jiva-client:ghgh89
+          image: mayadata/www-mongo-jiva-test-openebs:7ef354
           imagePullPolicy: Always
           ports:
           - containerPort: 80
