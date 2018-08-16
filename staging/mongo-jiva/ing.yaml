@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: mongo-frontend-ingress
+ namespace: mongo-jiva
+ annotations:
+   nginx.ingress.kubernetes.io/rewrite-target: /
+   kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+  - hosts:
+    - mongojiva.test.openebs.io
+    secretName: mongo-jiva-ingress
+  rules:
+  - host: mongojiva.test.openebs.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: mongo-jiva-client-service
+          servicePort: 80
+      - path: /api/
+        backend:
+          serviceName: mongo-jiva-backend-service
+          servicePort: 3000
+
